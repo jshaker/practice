@@ -24,7 +24,7 @@ public class Main {
 
         n5.addBidirectionalVertex(9, n6);
 
-        int shortestDistance = DijkstraSolver.solve(n1, n5);
+        int shortestDistance = Solution.solve(n1, n5);
 
         System.out.println("Shortest distance: " + shortestDistance);
     }

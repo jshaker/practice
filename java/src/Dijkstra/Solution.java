@@ -2,7 +2,7 @@ package Dijkstra;
 
 import java.util.*;
 
-public class DijkstraSolver {
+public class Solution {
 
     public static int solve(Node srcNode, Node destinationNode) {
         Map<Node, Integer> weightMap = new HashMap<Node, Integer>();

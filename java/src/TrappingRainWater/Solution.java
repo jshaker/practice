@@ -1,3 +1,5 @@
+package TrappingRainWater;
+
 class Solution {
     public int trap(int[] heights) {
         int volume = 0;
@@ -18,7 +20,7 @@ class Solution {
         return volume;
     }
     
-    public int findNextWall(int[] heights, int index) {
+    private int findNextWall(int[] heights, int index) {
         int height = heights[index];
         int max = 0;
         int maxIndex = -1;
@@ -34,7 +36,7 @@ class Solution {
         return maxIndex;
     }
     
-    public int calculateVolume(int[] heights, int start, int end) {
+    private int calculateVolume(int[] heights, int start, int end) {
         int volume = 0;
         int height = Math.min(heights[start], heights[end]);
         for (int i = start + 1; i < end; i++) {
