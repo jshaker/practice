@@ -20,23 +20,32 @@ public class DijkstraSolver {
             for (Vertex v : vertices) {
                 Node n2 = v.getNode();
                 if (visited.contains(n2)) { continue; }
-                int nodeWeight = v.getWeight();
-                int calculatedWeight = baseWeight + nodeWeight;
-                if (!weightMap.containsKey(n2)) {
-                    weightMap.put(n2, calculatedWeight);
-                } else {
-                    int existingWeight = weightMap.get(n2);
-                    if (calculatedWeight < existingWeight) {
-                        weightMap.put(n2, calculatedWeight);
-                    }
-                }
-                if (q.contains(n2)) {
-                    q.remove(n2);
-                }
-                q.add(n2);
+                replaceWeightIfSmaller(weightMap, v, baseWeight);
+                addToQueue(q, n2);
             }
         }
         return weightMap.get(destinationNode);
+    }
+
+    private static void addToQueue(PriorityQueue<Node> q, Node n) {
+        if (q.contains(n)) {
+            q.remove(n);
+        }
+        q.add(n);
+    }
+
+    private static void replaceWeightIfSmaller(Map<Node, Integer> weightMap, Vertex v, int baseWeight) {
+        Node n = v.getNode();
+        int nodeWeight = v.getWeight();
+        int calculatedWeight = baseWeight + nodeWeight;
+        if (!weightMap.containsKey(n)) {
+            weightMap.put(n, calculatedWeight);
+        } else {
+            int existingWeight = weightMap.get(n);
+            if (calculatedWeight < existingWeight) {
+                weightMap.put(n, calculatedWeight);
+            }
+        }
     }
 }
 
@@ -49,14 +58,8 @@ class NodeComparator implements Comparator<Node>{
     }
 
     public int compare(Node n1, Node n2) {
-        Integer weight1 = null;
-        if (weightMap.containsKey(n1)) {
-            weight1 = weightMap.get(n1);
-        }
-        Integer weight2 = null;
-        if (weightMap.containsKey(n2)) {
-            weight2 = weightMap.get(n2);
-        }
+        Integer weight1 = getWeight(n1);
+        Integer weight2 = getWeight(n2);
         if (weight2 == null) {
             return -1;
         }
@@ -64,5 +67,12 @@ class NodeComparator implements Comparator<Node>{
             return 1;
         }
         return weight1 - weight2;
+    }
+
+    private Integer getWeight(Node n) {
+        if (weightMap.containsKey(n)) {
+            return weightMap.get(n);
+        }
+        return null;
     }
 }
