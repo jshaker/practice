@@ -1,6 +1,4 @@
-package Dijkstra;
-
-import DataStructures.GraphNode;
+package DataStructures;
 
 public class Vertex {
 

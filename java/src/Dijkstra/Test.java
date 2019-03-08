@@ -2,7 +2,7 @@ package Dijkstra;
 
 import DataStructures.GraphNode;
 
-public class Main {
+public class Test {
 
     public static void main(String[] args) {
         GraphNode n1 = new GraphNode("1");

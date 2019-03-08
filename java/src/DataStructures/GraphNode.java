@@ -1,7 +1,5 @@
 package DataStructures;
 
-import Dijkstra.Vertex;
-
 import java.util.ArrayList;
 
 public class GraphNode {

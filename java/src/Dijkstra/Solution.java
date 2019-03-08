@@ -1,6 +1,7 @@
 package Dijkstra;
 
 import DataStructures.GraphNode;
+import DataStructures.Vertex;
 
 import java.util.*;
 
