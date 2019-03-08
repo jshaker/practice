@@ -1,6 +1,7 @@
 package BFS;
 
 import DataStructures.GraphNode;
+import DataStructures.GraphTraversalResolver;
 import DataStructures.Vertex;
 
 import java.util.ArrayList;
@@ -12,11 +13,11 @@ public class Solution {
     private Queue<GraphNode> q = new LinkedList<>();
     private HashSet<GraphNode> visited = new HashSet<>();
 
-    public void BFS(GraphNode srcNode, GraphNode destNode) {
+    public void BFS(GraphNode srcNode, GraphTraversalResolver resolver) {
         addToQueue(srcNode);
         while (q.size() > 0) {
             GraphNode n = q.poll();
-            if (n == destNode) {
+            if (resolver.resolve(n)) {
                 System.out.println("Found node!");
                 return;
             }
