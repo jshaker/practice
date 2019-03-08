@@ -1,4 +1,4 @@
-package ReverseNodesInKGroup;
+package DataStructures;
 
 public class ListNode {
   public int val;

@@ -1,6 +1,8 @@
 package ReverseNodesInKGroup;
 
-class Solution {    
+import DataStructures.ListNode;
+
+class Solution {
     public ListNode reverseKGroup(ListNode head, int k) {
         if (!hasNNextNodes(head, k -1)) {
             return head;

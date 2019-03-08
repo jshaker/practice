@@ -1,12 +1,14 @@
-package Dijkstra;
+package DataStructures;
+
+import Dijkstra.Vertex;
 
 import java.util.ArrayList;
 
-public class Node {
+public class GraphNode {
     private ArrayList<Vertex> vertices;
     private String id;
 
-    public Node(String id) {
+    public GraphNode(String id) {
         this.id = id;
         vertices = new ArrayList<Vertex>();
     }
@@ -19,7 +21,7 @@ public class Node {
         return id;
     }
 
-    public void addVertex(int weight, Node node) {
+    public void addVertex(int weight, GraphNode node) {
         Vertex v = new Vertex(weight, node);
         addVertex(v);
     }
@@ -28,7 +30,7 @@ public class Node {
         vertices.add(v);
     }
 
-    public void addBidirectionalVertex(int weight, Node node) {
+    public void addBidirectionalVertex(int weight, GraphNode node) {
         this.addVertex(weight, node);
         node.addVertex(weight, this);
     }

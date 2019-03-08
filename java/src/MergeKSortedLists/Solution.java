@@ -1,5 +1,7 @@
 package MergeKSortedLists;
 
+import DataStructures.ListNode;
+
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
         ListNode head = null;

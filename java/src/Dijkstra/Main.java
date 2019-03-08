@@ -1,14 +1,16 @@
 package Dijkstra;
 
+import DataStructures.GraphNode;
+
 public class Main {
 
     public static void main(String[] args) {
-        Node n1 = new Node("1");
-        Node n2 = new Node("2");
-        Node n3 = new Node("3");
-        Node n4 = new Node("4");
-        Node n5 = new Node("5");
-        Node n6 = new Node("6");
+        GraphNode n1 = new GraphNode("1");
+        GraphNode n2 = new GraphNode("2");
+        GraphNode n3 = new GraphNode("3");
+        GraphNode n4 = new GraphNode("4");
+        GraphNode n5 = new GraphNode("5");
+        GraphNode n6 = new GraphNode("6");
 
         n1.addBidirectionalVertex(7, n2);
         n1.addBidirectionalVertex(9, n3);

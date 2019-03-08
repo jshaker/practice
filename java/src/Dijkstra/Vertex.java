@@ -1,16 +1,18 @@
 package Dijkstra;
 
+import DataStructures.GraphNode;
+
 public class Vertex {
 
     private int weight;
-    private Node node;
+    private GraphNode node;
 
-    public Vertex(int weight, Node node) {
+    public Vertex(int weight, GraphNode node) {
         this.weight = weight;
         this.node = node;
     }
 
-    public Node getNode() {
+    public GraphNode getNode() {
         return node;
     }
 
